@@ -45,3 +45,8 @@ sentiment-app/
 | Membre A | KABIL Mohamed | @Mohamed-Kabil | |
 | Membre B | ELGHARBAOUI Youssef| @YoussefElGharbaouiDevs | |
 | Membre C | ELWAFI Ahmed Ziad | @elwafiZiad | |
+
+## Journal de bord
+
+Dépôt de travail : [Mohamed-Kabil/TP_IADEV](https://github.com/Mohamed-Kabil/TP_IADEV).
+Le suivi des contrôles et les résultats observés sont dans [le journal TP1 à TP6](docs/journal-tp1-tp6.md). Les captures seront placées dans `docs/captures/`.
