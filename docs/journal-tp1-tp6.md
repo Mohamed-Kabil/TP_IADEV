@@ -11,7 +11,7 @@
 
 **Membre C** : ELWAFI Ahmed Ziad, @elwafiZiad (équipe de trois ; le modèle du journal prévoit deux membres).
 
-**Mise à jour du 7 novembre 2026** : migration du travail existant vers TP_IADEV, avec conservation de l’historique. Le dossier local reste `C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app` ; les chemins `C:\IA-DEV` des exemples ci-dessous sont à adapter. Les résultats renseignés proviennent des commandes réellement exécutées ; les TP2 à TP6, les contrôles sur les autres postes et le clone frais restent à réaliser. Les captures non présentes sont à ajouter : aucune image ni mesure n’a été reconstituée.
+**Mise à jour du 7 novembre 2026** : migration du travail existant vers TP_IADEV, avec conservation de l’historique. Le dossier local reste `C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app` ; les chemins `C:\IA-DEV` des exemples ci-dessous sont à adapter. Les résultats renseignés proviennent des commandes réellement exécutées ; le TP2 est désormais exécuté et ses résultats sont renseignés ci-dessous ; les TP3 à TP6, les contrôles sur les autres postes et le clone frais restent à réaliser. Les captures non présentes sont à ajouter : aucune image ni mesure n’a été reconstituée.
 
 ## Comment remplir ce journal
 
@@ -370,16 +370,18 @@ python -m pytest -q
 **Obtenu** :
 
 ```
-À compléter
+Simulation : 8 fichiers du kit ajoutés et !models/metrics.json ajouté au .gitignore.
+Kit installé.
+2 failed, 38 passed, 2 skipped in 6.36s
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que réclament les deux échecs ?) :
 
-> À compléter.
+> Les deux échecs réclamaient models/metrics.json, non encore produit avant entraînement. Les deux tests de prédiction étaient ignorés parce que le fichier du modèle n’existait pas encore ; les 38 tests du TP1 passaient déjà.
 
-![C1 : point de départ du TP2](captures/tp2-c1-pytest.png)
+**Capture à ajouter** : `captures/tp2-c1-pytest.png` (aucune capture disponible pour ce contrôle).
 
 ### C2 · Le jeu de démonstration
 
@@ -394,16 +396,18 @@ python src/make_demo.py
 **Obtenu** :
 
 ```
-À compléter
+290 avis écrits dans data\demo_reviews.csv
+145 positifs, 145 négatifs
+100 avis mitigés et 30 neutres
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (recopiez un avis mitigé et expliquez sa structure) :
 
-> À compléter.
+> Exemple : « Commande jamais reçue et remboursement en attente au début, sauf que ensuite je recommande sans hésiter. » La première partie est négative, puis la conclusion devient positive : l’étiquette suit la seconde partie.
 
-![C2 : jeu de démonstration](captures/tp2-c2-make-demo.png)
+**Capture à ajouter** : `captures/tp2-c2-make-demo.png` (aucune capture disponible pour ce contrôle).
 
 ### C3 · L'entraînement
 
@@ -419,16 +423,21 @@ git status --short
 **Obtenu** :
 
 ```
-À compléter
+Source : demo, 290 avis (145 négatifs)
+232 avis d’entraînement, 58 de test
+Vocabulaire : 316 termes
+F1 macro sur le jeu de test : 0.879 (seuil 0.85)
+models/metrics.json : présent et versionné
+models/sentiment.joblib et data/demo_reviews.csv : ignorés par Git
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi la mesure est-elle versionnée, et pas le modèle ?) :
 
-> À compléter.
+> Les métriques permettent de suivre la qualité du modèle dans l’historique sans y stocker le pipeline binaire, qui se reconstruit par entraînement. Le membre A a d’abord rencontré un git introuvable dans son terminal ; l’ajout de C:\Program Files\Git\cmd au PATH de la session permet d’utiliser la commande, et les exclusions ont été vérifiées séparément.
 
-![C3 : entraînement](captures/tp2-c3-train.png)
+**Capture à ajouter** : `captures/tp2-c3-train.png` (aucune capture disponible pour ce contrôle).
 
 ### C4 · L'évaluation
 
@@ -443,16 +452,22 @@ python src/evaluate.py
 **Obtenu** (la matrice et les trois erreurs affichées) :
 
 ```
-À compléter
+            negative  positive
+negative          27         2
+positive           5        24
+7 erreurs sur 58 avis. Trois exemples observés :
+positive -> negative : Taille trop petite et retour payant au déballage, sauf que ensuite produit conforme à la description, très satisfait.
+positive -> negative : Commande jamais reçue et remboursement en attente au début, sauf que ensuite je recommande sans hésiter.
+negative -> positive : Service impeccable et livraison en avance sur le papier, sauf que ensuite produit cassé à l’arrivée.
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi le modèle se trompe-t-il sur ces avis ?) :
 
-> À compléter.
+> Les sept erreurs observées concernent des avis mitigés. Les mots et bigrammes TF-IDF capturent des indices des deux sentiments, sans représenter correctement lequel conclut l’avis ; une représentation contextuelle serait une piste à comparer expérimentalement.
 
-![C4 : matrice de confusion](captures/tp2-c4-evaluate.png)
+**Capture à ajouter** : `captures/tp2-c4-evaluate.png` (aucune capture disponible pour ce contrôle).
 
 ### C5 · Le vrai jeu de données, les tests, le push
 
@@ -471,16 +486,23 @@ git push
 **Obtenu** :
 
 ```
-À compléter
+Source : allocine, 20000 avis (10204 négatifs)
+16000 avis d’entraînement, 4000 de test
+Vocabulaire : 149529 termes
+F1 macro : 0.9205 ; exactitude : 0.9205 ; rappel négatif : 0.9113
+42 passed in 3.49s (sortie communiquée par le membre A)
+Commit publié : 68b316bcbaa90862ca81f5e41200b409b8ea5161
+GitHub Actions : completed / success
+https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/42369544357
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi le F1 est-il meilleur sur Allociné ?) :
 
-> À compléter.
+> Le score Allociné dépasse celui du jeu de démonstration sur son propre test : le corpus est plus grand et les domaines ainsi que les formulations diffèrent, ce qui ne permet pas d’attribuer le gain uniquement à la taille. Le modèle Allociné a prédit negative avec un score de 0,5008 sur l’avis e-commerce « Livraison rapide, produit conforme, très satisfait » ; la généralisation à ce domaine reste donc à évaluer. La CI du commit TP2 a été vérifiée comme réussie ; elle peut ignorer les deux tests nécessitant le modèle local, qui n’est pas versionné.
 
-![C5 : Allociné et tests](captures/tp2-c5-allocine.png)
+**Capture à ajouter** : `captures/tp2-c5-allocine.png` (aucune capture disponible pour ce contrôle).
 
 ### Membre B, après le TP2
 
