@@ -749,16 +749,21 @@ git push
 **Obtenu** :
 
 ```
-Publication et vérification de la CI en cours.
+Commit TP3 : 9bb558c1ffffa6feed4e28b0924579760abafe92
+GitHub Actions : completed / success
+https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/42370509197
+Résultat local associé : 48 passed, 1 warning in 4.47s
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi la CI doit-elle entraîner le modèle ?) :
 
-> Le workflow entraîne désormais le modèle de démonstration avant pytest pour que les tests de prédiction et d’API soient réellement exécutés. Le résultat de la CI sera renseigné après observation du nouveau run.
+> Le workflow entraîne désormais le modèle de démonstration avant pytest pour que les tests de prédiction et d’API soient réellement exécutés. La CI du commit TP3 a été observée avec la conclusion success ; son état est conservé dans docs/controles/tp3-t19-ci.json.
 
 **Capture à ajouter** : `captures/tp3-t19-actions.png`.
+
+**Preuve** : [état CI enregistré](controles/tp3-t19-ci.json).
 
 ### T20 · L'API sans modèle
 

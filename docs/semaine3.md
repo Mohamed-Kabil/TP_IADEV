@@ -21,6 +21,7 @@ Le champ absent a donné 422 avec `missing`, et `{"text":42}` a donné 422 avec 
 | T16 | POST /predict : 200, POSITIVE, 0.777 |
 | T17 | POST /predict : 200, NEGATIVE, 0.7465 |
 | T18 | Texte vide, champ absent, nombre : 422 dans les trois cas |
+| T19 | [CI réussie du commit TP3](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/42370509197) |
 | T20 | Démarrage sans modèle refusé ; modèle ensuite restauré |
 
 L'avertissement de dépréciation AnyIO vient de Starlette/TestClient et n'empêche pas les tests de passer. Le modèle actif est celui de démonstration, réentraîné comme demandé au TP3 ; les mesures Allociné du TP2 restent consignées dans `semaine2.md`.
