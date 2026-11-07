@@ -44,4 +44,4 @@ sentiment-app/
 | --- | --- | --- | --- |
 | Membre A | KABIL Mohamed | @Mohamed-Kabil | |
 | Membre B | ELGHARBAOUI Youssef| @YoussefElGharbaouiDevs | |
-| 
+| Membre C | ELWAFI Ahmed Ziad | @elwafiZiad | |
