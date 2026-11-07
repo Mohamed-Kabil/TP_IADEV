@@ -1,0 +1,95 @@
+[
+  {
+    "controle": "T15",
+    "status": 200,
+    "response": {
+      "status": "OK",
+      "model": "tfidf-logreg (TP2, models/sentiment.joblib)"
+    }
+  },
+  {
+    "controle": "T16",
+    "request": {
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    },
+    "status": 200,
+    "response": {
+      "label": "POSITIVE",
+      "score": 0.777,
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    }
+  },
+  {
+    "controle": "T17",
+    "request": {
+      "text": "Produit cassé et service injoignable, à fuir"
+    },
+    "status": 200,
+    "response": {
+      "label": "NEGATIVE",
+      "score": 0.7465,
+      "text": "Produit cassé et service injoignable, à fuir"
+    }
+  },
+  {
+    "controle": "T18-vide",
+    "request": {
+      "text": ""
+    },
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "string_too_short",
+          "loc": [
+            "body",
+            "text"
+          ],
+          "msg": "String should have at least 1 character",
+          "input": "",
+          "ctx": {
+            "min_length": 1
+          }
+        }
+      ]
+    }
+  },
+  {
+    "controle": "T18-absent",
+    "request": {},
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "text"
+          ],
+          "msg": "Field required",
+          "input": {}
+        }
+      ]
+    }
+  },
+  {
+    "controle": "T18-nombre",
+    "request": {
+      "text": 42
+    },
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "string_type",
+          "loc": [
+            "body",
+            "text"
+          ],
+          "msg": "Input should be a valid string",
+          "input": 42
+        }
+      ]
+    }
+  }
+]

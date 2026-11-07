@@ -1,0 +1,23 @@
+INFO:     Started server process [17600]
+INFO:     Waiting for application startup.
+2026-11-07 11:58:49,395 INFO Démarrage de l'API...
+ERROR:    Traceback (most recent call last):
+  File "C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\.venv\Lib\site-packages\starlette\routing.py", line 692, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\api\main.py", line 23, in lifespan
+    app.state.classifier = load_model()
+                           ^^^^^^^^^^^^
+  File "C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\api\model.py", line 30, in load_model
+    return SentimentClassifier()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\api\model.py", line 20, in __init__
+    charger_modele()  # échoue immédiatement si le joblib manque : on ne démarre pas sans modèle
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\src\predict.py", line 21, in charger_modele
+    raise FileNotFoundError("models/sentiment.joblib absent : lancez python src/train.py")
+FileNotFoundError: models/sentiment.joblib absent : lancez python src/train.py
+
+ERROR:    Application startup failed. Exiting.

@@ -11,7 +11,7 @@
 
 **Membre C** : ELWAFI Ahmed Ziad, @elwafiZiad (équipe de trois ; le modèle du journal prévoit deux membres).
 
-**Mise à jour du 7 novembre 2026** : migration du travail existant vers TP_IADEV, avec conservation de l’historique. Le dossier local reste `C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app` ; les chemins `C:\IA-DEV` des exemples ci-dessous sont à adapter. Les résultats renseignés proviennent des commandes réellement exécutées ; le TP2 est désormais exécuté et ses résultats sont renseignés ci-dessous ; les TP3 à TP6, les contrôles sur les autres postes et le clone frais restent à réaliser. Les captures non présentes sont à ajouter : aucune image ni mesure n’a été reconstituée.
+**Mise à jour du 7 novembre 2026** : migration du travail existant vers TP_IADEV, avec conservation de l’historique. Le dossier local reste `C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app` ; les chemins `C:\IA-DEV` des exemples ci-dessous sont à adapter. Les résultats renseignés proviennent des commandes réellement exécutées ; le TP2 est désormais exécuté et ses résultats sont renseignés ci-dessous ; le TP3 est désormais exécuté localement ; les TP4 à TP6, les contrôles sur les autres postes et le clone frais restent à réaliser. Les captures non présentes sont à ajouter : aucune image ni mesure n’a été reconstituée.
 
 ## Comment remplir ce journal
 
@@ -550,16 +550,22 @@ python -m pytest -q
 **Obtenu** :
 
 ```
-À compléter
+Kit TP3 installé : api/, tests/test_api.py, docs/semaine3.md et documents du TP.
+pytest.ini : pythonpath = .
+CI : dépendances API et entraînement du modèle ajoutés.
+Modèle de démonstration : F1 macro 0.879
+48 passed, 1 warning in 4.47s
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi réentraîner sur le jeu de démonstration avant les tests ?) :
 
-> À compléter.
+> Le TP3 utilise le modèle de démonstration afin de reproduire les mêmes prédictions en local et dans la CI. Les 48 tests passent ; le seul avertissement est une dépréciation AnyIO dans Starlette/TestClient.
 
-![T14 : 48 tests verts](captures/tp3-t14-pytest.png)
+**Capture à ajouter** : `captures/tp3-t14-pytest.png`.
+
+**Preuve textuelle** : [Sortie pytest](controles/tp3-t14-pytest.txt)
 
 ### T15 · `/health`
 
@@ -576,16 +582,19 @@ Puis, dans `http://localhost:8000/docs` : `GET /health`, « Try it out », « Ex
 **Obtenu** :
 
 ```
-À compléter
+200
+{"status":"OK","model":"tfidf-logreg (TP2, models/sentiment.joblib)"}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Le contrôle a été exécuté dans Swagger, puis confirmé par un appel HTTP réel. L’API a chargé le modèle du TP2 et annonce son nom.
 
-![T15 : health dans /docs](captures/tp3-t15-health.png)
+**Capture à ajouter** : `captures/tp3-t15-health.png`.
+
+**Preuve textuelle** : [Réponses HTTP T15-T18](controles/tp3-t15-t18-reponses.json)
 
 ### T16 · Un avis positif
 
@@ -596,16 +605,17 @@ Puis, dans `http://localhost:8000/docs` : `GET /health`, « Try it out », « Ex
 **Obtenu** :
 
 ```
-À compléter
+200
+{"label":"POSITIVE","score":0.777,"text":"Livraison rapide, produit conforme, très satisfait"}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> La réponse correspond au contrôle attendu avec le modèle de démonstration. Le score est celui renvoyé par le prédicteur du TP2, appelé par l’API.
 
-![T16 : avis positif](captures/tp3-t16-positif.png)
+**Capture à ajouter** : `captures/tp3-t16-positif.png`.
 
 Facultatif, la même requête en ligne de commande (API lancée dans un autre terminal) :
 
@@ -614,6 +624,8 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 ```
 
 &nbsp;
+
+**Preuve textuelle** : [Réponses HTTP T15-T18](controles/tp3-t15-t18-reponses.json)
 
 ### T17 · Un avis négatif
 
@@ -624,16 +636,19 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 **Obtenu** :
 
 ```
-À compléter
+200
+{"label":"NEGATIVE","score":0.7465,"text":"Produit cassé et service injoignable, à fuir"}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> L’avis négatif est correctement reconnu avec le score attendu. Les contrôles positif et négatif ont été réalisés dans Swagger sur le serveur lancé localement.
 
-![T17 : avis négatif](captures/tp3-t17-negatif.png)
+**Capture à ajouter** : `captures/tp3-t17-negatif.png`.
+
+**Preuve textuelle** : [Réponses HTTP T15-T18](controles/tp3-t15-t18-reponses.json)
 
 ### T18 · Les refus
 
@@ -644,16 +659,80 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 **Obtenu** (le code et le `detail` de chaque réponse) :
 
 ```
-À compléter
+{
+  "controle": "T18-vide",
+  "request": {
+    "text": ""
+  },
+  "status": 422,
+  "response": {
+    "detail": [
+      {
+        "type": "string_too_short",
+        "loc": [
+          "body",
+          "text"
+        ],
+        "msg": "String should have at least 1 character",
+        "input": "",
+        "ctx": {
+          "min_length": 1
+        }
+      }
+    ]
+  }
+}
+
+{
+  "controle": "T18-absent",
+  "request": {},
+  "status": 422,
+  "response": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "body",
+          "text"
+        ],
+        "msg": "Field required",
+        "input": {}
+      }
+    ]
+  }
+}
+
+{
+  "controle": "T18-nombre",
+  "request": {
+    "text": 42
+  },
+  "status": 422,
+  "response": {
+    "detail": [
+      {
+        "type": "string_type",
+        "loc": [
+          "body",
+          "text"
+        ],
+        "msg": "Input should be a valid string",
+        "input": 42
+      }
+    ]
+  }
+}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que dit `detail`, et pourquoi 422 plutôt que 500 ?) :
 
-> À compléter.
+> Les trois entrées invalides donnent 422 avec un detail en liste qui localise le défaut dans body/text : string_too_short, missing ou string_type. Le contrat d’entrée est refusé côté client ; aucune de ces requêtes ne déclenche une erreur serveur 500.
 
-![T18 : un refus 422](captures/tp3-t18-refus.png)
+**Capture à ajouter** : `captures/tp3-t18-refus.png`.
+
+**Preuve textuelle** : [Réponses complètes](controles/tp3-t15-t18-reponses.json)
 
 ### T19 · La CI
 
@@ -670,16 +749,16 @@ git push
 **Obtenu** :
 
 ```
-À compléter
+Publication et vérification de la CI en cours.
 ```
 
 - [ ] Conforme
 
 **Commentaire** (pourquoi la CI doit-elle entraîner le modèle ?) :
 
-> À compléter.
+> Le workflow entraîne désormais le modèle de démonstration avant pytest pour que les tests de prédiction et d’API soient réellement exécutés. Le résultat de la CI sera renseigné après observation du nouveau run.
 
-![T19 : la CI du TP3](captures/tp3-t19-actions.png)
+**Capture à ajouter** : `captures/tp3-t19-actions.png`.
 
 ### T20 · L'API sans modèle
 
@@ -696,16 +775,21 @@ Rename-Item models/sentiment.bak sentiment.joblib
 **Obtenu** :
 
 ```
-À compléter
+FileNotFoundError: models/sentiment.joblib absent : lancez python src/train.py
+Application startup failed. Exiting.
+Code de sortie : 3
+Modèle restauré ; GET /health sur l’API initiale : 200
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Le contrôle a été exécuté avec un processus uvicorn distinct sur le port 8001, pour conserver le serveur de travail sur 8000. Le fichier a été temporairement renommé puis restauré dans un bloc finally ; l’échec se produit pendant le chargement initial, avant le traitement d’une requête.
 
-![T20 : refus de démarrer](captures/tp3-t20-sans-modele.png)
+**Capture à ajouter** : `captures/tp3-t20-sans-modele.png`.
+
+**Preuve textuelle** : [Trace réelle du lancement](controles/tp3-t20-sans-modele.txt)
 
 ### Membre B, après le TP3
 
