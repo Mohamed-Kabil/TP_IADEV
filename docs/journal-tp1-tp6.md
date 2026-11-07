@@ -533,6 +533,8 @@ python -m pytest -q
 
 ## TP3 : exposer le modèle par une API
 
+Les captures T15 à T18 proviennent des requêtes exécutées dans Swagger ; T19 montre le run GitHub Actions validé. Les captures T14 et T20 montrent sur GitHub les fichiers de sortie réellement enregistrés lors des contrôles : ce sont des vues des journaux sauvegardés, pas des captures du terminal au moment de leur exécution.
+
 ### T14 · Le kit installé (membre A)
 
 ```powershell
@@ -563,7 +565,7 @@ Modèle de démonstration : F1 macro 0.879
 
 > Le TP3 utilise le modèle de démonstration afin de reproduire les mêmes prédictions en local et dans la CI. Les 48 tests passent ; le seul avertissement est une dépréciation AnyIO dans Starlette/TestClient.
 
-**Capture à ajouter** : `captures/tp3-t14-pytest.png`.
+![T14 : sortie pytest enregistrée, affichée sur GitHub](captures/tp3-t14-pytest.jpg)
 
 **Preuve textuelle** : [Sortie pytest](controles/tp3-t14-pytest.txt)
 
@@ -592,7 +594,7 @@ Puis, dans `http://localhost:8000/docs` : `GET /health`, « Try it out », « Ex
 
 > Le contrôle a été exécuté dans Swagger, puis confirmé par un appel HTTP réel. L’API a chargé le modèle du TP2 et annonce son nom.
 
-**Capture à ajouter** : `captures/tp3-t15-health.png`.
+![T15 : réponse réelle GET /health dans Swagger](captures/tp3-t15-health.jpg)
 
 **Preuve textuelle** : [Réponses HTTP T15-T18](controles/tp3-t15-t18-reponses.json)
 
@@ -615,7 +617,7 @@ Puis, dans `http://localhost:8000/docs` : `GET /health`, « Try it out », « Ex
 
 > La réponse correspond au contrôle attendu avec le modèle de démonstration. Le score est celui renvoyé par le prédicteur du TP2, appelé par l’API.
 
-**Capture à ajouter** : `captures/tp3-t16-positif.png`.
+![T16 : prédiction positive dans Swagger](captures/tp3-t16-positif.jpg)
 
 Facultatif, la même requête en ligne de commande (API lancée dans un autre terminal) :
 
@@ -646,7 +648,7 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 
 > L’avis négatif est correctement reconnu avec le score attendu. Les contrôles positif et négatif ont été réalisés dans Swagger sur le serveur lancé localement.
 
-**Capture à ajouter** : `captures/tp3-t17-negatif.png`.
+![T17 : prédiction négative dans Swagger](captures/tp3-t17-negatif.jpg)
 
 **Preuve textuelle** : [Réponses HTTP T15-T18](controles/tp3-t15-t18-reponses.json)
 
@@ -730,7 +732,11 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 
 > Les trois entrées invalides donnent 422 avec un detail en liste qui localise le défaut dans body/text : string_too_short, missing ou string_type. Le contrat d’entrée est refusé côté client ; aucune de ces requêtes ne déclenche une erreur serveur 500.
 
-**Capture à ajouter** : `captures/tp3-t18-refus.png`.
+![T18 : refus du texte vide dans Swagger](captures/tp3-t18-refus.jpg)
+
+![T18 : champ absent](captures/tp3-t18-champ-absent.jpg)
+
+![T18 : type numérique refusé](captures/tp3-t18-type-invalide.jpg)
 
 **Preuve textuelle** : [Réponses complètes](controles/tp3-t15-t18-reponses.json)
 
@@ -761,7 +767,7 @@ Résultat local associé : 48 passed, 1 warning in 4.47s
 
 > Le workflow entraîne désormais le modèle de démonstration avant pytest pour que les tests de prédiction et d’API soient réellement exécutés. La CI du commit TP3 a été observée avec la conclusion success ; son état est conservé dans docs/controles/tp3-t19-ci.json.
 
-**Capture à ajouter** : `captures/tp3-t19-actions.png`.
+![T19 : exécution CI TP3 réussie sur GitHub Actions](captures/tp3-t19-actions.jpg)
 
 **Preuve** : [état CI enregistré](controles/tp3-t19-ci.json).
 
@@ -792,7 +798,7 @@ Modèle restauré ; GET /health sur l’API initiale : 200
 
 > Le contrôle a été exécuté avec un processus uvicorn distinct sur le port 8001, pour conserver le serveur de travail sur 8000. Le fichier a été temporairement renommé puis restauré dans un bloc finally ; l’échec se produit pendant le chargement initial, avant le traitement d’une requête.
 
-**Capture à ajouter** : `captures/tp3-t20-sans-modele.png`.
+![T20 : trace de démarrage sans modèle enregistrée, affichée sur GitHub](captures/tp3-t20-sans-modele.jpg)
 
 **Preuve textuelle** : [Trace réelle du lancement](controles/tp3-t20-sans-modele.txt)
 

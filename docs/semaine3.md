@@ -26,4 +26,4 @@ Le champ absent a donné 422 avec `missing`, et `{"text":42}` a donné 422 avec 
 
 L'avertissement de dépréciation AnyIO vient de Starlette/TestClient et n'empêche pas les tests de passer. Le modèle actif est celui de démonstration, réentraîné comme demandé au TP3 ; les mesures Allociné du TP2 restent consignées dans `semaine2.md`.
 
-Les [réponses HTTP](controles/tp3-t15-t18-reponses.json), la [sortie des tests](controles/tp3-t14-pytest.txt) et la [trace du démarrage sans modèle](controles/tp3-t20-sans-modele.txt) sont conservées comme preuves textuelles. Les captures d'écran restent à joindre au journal.
+Les [réponses HTTP](controles/tp3-t15-t18-reponses.json), la [sortie des tests](controles/tp3-t14-pytest.txt) et la [trace du démarrage sans modèle](controles/tp3-t20-sans-modele.txt) sont conservées comme preuves textuelles. Les neuf captures du TP3 sont intégrées au [journal T14 à T20](journal-tp1-tp6.md#tp3--exposer-le-modèle-par-une-api). Les images T14 et T20 affichent les sorties enregistrées sur GitHub ; celles de T15 à T18 montrent les requêtes réexécutées dans Swagger, et T19 le run CI réussi.
