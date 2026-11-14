@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentiment — client web du TP2</title>
+  <style>
+    :root{color-scheme:light;font-family:system-ui,sans-serif;color:#17242c;background:#f3f6f5}
+    *{box-sizing:border-box}body{margin:0}main{max-width:850px;margin:auto;padding:48px 24px}
+    header{border-bottom:1px solid #cad8d2;padding-bottom:24px;margin-bottom:24px}
+    .eyebrow{color:#286b57;font-size:.8rem;font-weight:700;letter-spacing:.12em}h1{font-size:2.4rem;margin:12px 0}
+    p{line-height:1.6;color:#4f626b}.panel{background:white;border:1px solid #dbe3df;border-radius:12px;padding:24px;margin:20px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-weight:650;margin-bottom:8px}
+    input,textarea{width:100%;font:inherit;padding:12px;border:1px solid #acbdb5;border-radius:6px}textarea{min-height:140px;resize:vertical}
+    button{font:inherit;background:#17664d;color:white;border:0;border-radius:6px;padding:12px 20px;cursor:pointer;margin-top:16px}
+    button.secondary{background:#edf4f0;color:#17664d}button:disabled{opacity:.55;cursor:wait}
+    .note{font-size:.85rem;margin:10px 0 0}#resultat{border-left:5px solid #17664d}#resultat.erreur{border-color:#ad3b33}
+    #verdict{font-size:1.35rem;margin:0 0 12px}#score{font-size:2rem;font-weight:700}#etat{font-weight:600}
+    [hidden]{display:none!important}@media(max-width:600px){.grid{grid-template-columns:1fr}main{padding:24px 16px}h1{font-size:1.8rem}}
+  </style>
+</head>
+<body>
+<main>
+  <header><span class="eyebrow">TP2 · API VERSIONNÉE</span><h1>Lire le sentiment d’un avis</h1>
+    <p>Une prédiction pour aider le service client. Si le modèle hésite, l’avis est à vérifier par un humain.</p></header>
+  <section class="panel" aria-label="Connexion">
+    <div class="grid"><div><label for="api-url">Adresse de l’API</label><input id="api-url" type="url" value="http://127.0.0.1:8000" autocomplete="url"></div>
+      <div><label for="api-key">Clé client</label><input id="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="Clé du fichier .env local"></div></div>
+    <p class="note">La clé reste dans cette page, sans enregistrement dans le navigateur. Elle est transmise uniquement à l’adresse API renseignée.</p>
+    <button id="verifier" type="button" class="secondary">Vérifier la connexion</button>
+    <p id="etat" role="status" aria-live="polite">Connexion à vérifier.</p>
+  </section>
+  <form id="analyse" class="panel" novalidate><label for="texte">Votre avis</label>
+    <textarea id="texte" maxlength="2000" placeholder="Livraison rapide, produit conforme, très satisfait"></textarea>
+    <p class="note">Jusqu’à 2 000 caractères. La clé client est nécessaire pour analyser.</p>
+    <button id="envoyer" type="submit">Analyser l’avis</button>
+  </form>
+  <section id="resultat" class="panel" role="status" aria-live="polite" hidden>
+    <h2 id="verdict"></h2><div id="score"></div><p id="message"></p>
+  </section>
+</main>
+<script type="module">
+import { creerClient } from './client.js';
+const byId = id => document.getElementById(id);
+const client = () => creerClient(byId('api-url').value, byId('api-key').value);
+byId('verifier').addEventListener('click', async () => {
+  byId('verifier').disabled = true;
+  try { const r = await client().sante(); byId('etat').textContent = r.ok ? `API prête : ${r.data.model}` : r.message; }
+  catch (e) { byId('etat').textContent = e.message; }
+  finally { byId('verifier').disabled = false; }
+});
+byId('analyse').addEventListener('submit', async event => {
+  event.preventDefault(); byId('envoyer').disabled = true;
+  try {
+    const r = await client().predire(byId('texte').value);
+    byId('resultat').hidden = false; byId('resultat').classList.toggle('erreur', !r.ok);
+    byId('verdict').textContent = r.ok ? r.message : 'Analyse impossible';
+    byId('score').textContent = r.ok ? `${Math.round(r.data.score * 100)} %` : '';
+    byId('message').textContent = r.ok ? 'Score du modèle, sans garantie de justesse.' : r.message;
+  } catch (e) {
+    byId('resultat').hidden = false; byId('resultat').classList.add('erreur');
+    byId('verdict').textContent = 'Analyse impossible'; byId('score').textContent = ''; byId('message').textContent = e.message;
+  } finally { byId('envoyer').disabled = false; }
+});
+</script>
+</body>
+</html>

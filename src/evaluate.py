@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 import joblib
-from sklearn.metrics import ConfusionMatrixDisplay, classification_report, confusion_matrix
+from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))   # pour lancer depuis la racine

@@ -1,0 +1,20 @@
+✔ santé : route publique /v1/health (3.191ms)
+✔ prédiction : route, JSON et clé client (1.2064ms)
+✔ verdict négatif lisible (0.2451ms)
+✔ abstention : transmettre au contrôle humain (0.6789ms)
+✔ erreur stable 401 NON_AUTHENTIFIE (0.3955ms)
+✔ erreur stable 403 ACCES_REFUSE (0.2287ms)
+✔ erreur stable 422 ENTREE_INVALIDE (0.2437ms)
+✔ erreur stable 500 ERREUR_INTERNE (0.1833ms)
+✔ erreur stable 503 MODELE_INDISPONIBLE (0.902ms)
+✔ réponse mal formée et adresse invalide (1.6604ms)
+✔ API injoignable : message explicite (0.2781ms)
+✔ clé absente : aucun envoi du texte (0.188ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 152.7534

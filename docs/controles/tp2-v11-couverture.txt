@@ -1,0 +1,25 @@
+......................................................................x. [ 63%]
+.........................................                                [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:37
+  C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\.venv\Lib\site-packages\starlette\testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+api\__init__.py       0      0   100%
+api\main.py          77      0   100%
+api\model.py         27      0   100%
+api\schemas.py       33      0   100%
+api\securite.py      41      0   100%
+api\v1.py            39      0   100%
+-----------------------------------------------
+TOTAL               217      0   100%
+Required test coverage of 95% reached. Total coverage: 100.00%
+=========================== short test summary info ===========================
+XFAIL tests/test_jeu_or.py::test_pas_d_erreur_franche[ligne-21] - Erreur signalée dans le manuel V1.1, p. 18 : verdict positif malgré le sens négatif ; limite du vocabulaire TF-IDF.
+112 passed, 1 xfailed, 1 warning in 16.12s

@@ -1,0 +1,146 @@
+[
+  {
+    "controle": "sante publique",
+    "methode": "GET",
+    "route": "/v1/health",
+    "role": null,
+    "requete": null,
+    "statut": 200,
+    "reponse": {
+      "status": "OK",
+      "model": "tfidf-logreg (TP2, models/sentiment.joblib)"
+    },
+    "deprecation": null,
+    "link": null
+  },
+  {
+    "controle": "cle absente",
+    "methode": "POST",
+    "route": "/v1/predict",
+    "role": null,
+    "requete": {
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    },
+    "statut": 401,
+    "reponse": {
+      "erreur": {
+        "code": "NON_AUTHENTIFIE",
+        "message": "Clé d'API manquante : en-tête X-API-Key",
+        "champs": []
+      }
+    },
+    "deprecation": null,
+    "link": null
+  },
+  {
+    "controle": "cle client",
+    "methode": "POST",
+    "route": "/v1/predict",
+    "role": "client",
+    "requete": {
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    },
+    "statut": 200,
+    "reponse": {
+      "label": "POSITIVE",
+      "score": 0.777,
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    },
+    "deprecation": null,
+    "link": null
+  },
+  {
+    "controle": "blancs",
+    "methode": "POST",
+    "route": "/v1/predict",
+    "role": "client",
+    "requete": {
+      "text": "   "
+    },
+    "statut": 422,
+    "reponse": {
+      "erreur": {
+        "code": "ENTREE_INVALIDE",
+        "message": "Entrée refusée par le contrat de l'API",
+        "champs": [
+          {
+            "champ": "body.text",
+            "message": "Value error, texte vide une fois les blancs retirés"
+          }
+        ]
+      }
+    },
+    "deprecation": null,
+    "link": null
+  },
+  {
+    "controle": "role insuffisant",
+    "methode": "GET",
+    "route": "/v1/modele",
+    "role": "client",
+    "requete": null,
+    "statut": 403,
+    "reponse": {
+      "erreur": {
+        "code": "ACCES_REFUSE",
+        "message": "Accès refusé au rôle « client »",
+        "champs": []
+      }
+    },
+    "deprecation": null,
+    "link": null
+  },
+  {
+    "controle": "administrateur",
+    "methode": "GET",
+    "route": "/v1/modele",
+    "role": "admin",
+    "requete": null,
+    "statut": 200,
+    "reponse": {
+      "model": "tfidf-logreg (TP2, models/sentiment.joblib)",
+      "seuil_abstention": 0.6,
+      "metriques": {
+        "source": "demo",
+        "date": "2026-11-07",
+        "n_train": 232,
+        "n_test": 58,
+        "f1_macro": 0.879,
+        "accuracy": 0.8793,
+        "recall_negative": 0.931,
+        "seuil_f1": 0.85
+      }
+    },
+    "deprecation": null,
+    "link": null
+  },
+  {
+    "controle": "compatibilite",
+    "methode": "POST",
+    "route": "/predict",
+    "role": null,
+    "requete": {
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    },
+    "statut": 200,
+    "reponse": {
+      "label": "POSITIVE",
+      "score": 0.777,
+      "text": "Livraison rapide, produit conforme, très satisfait"
+    },
+    "deprecation": "true",
+    "link": "</v1/predict>; rel=\"successor-version\""
+  },
+  {
+    "controle": "preflight CORS",
+    "origine": "http://localhost:5500",
+    "statut": 200,
+    "origine_autorisee": "http://localhost:5500"
+  },
+  {
+    "controle": "preflight CORS",
+    "origine": "http://localhost:5600",
+    "statut": 400,
+    "origine_autorisee": null
+  }
+]

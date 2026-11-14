@@ -54,3 +54,5 @@ Le suivi des contrôles et les résultats observés sont dans [le journal TP1 à
 ## Avancement — manuel V1.1
 
 Le complément du TP1 (modèle, API, jeu d’or et abstention) est décrit dans [le compte rendu V1.1](docs/tp1-manuel-v11.md). Bilan local : **68 passed, 1 xfailed**. Le journal historique conserve l’ancienne numérotation et contient la table de correspondance.
+
+Le [TP2 V1.1 — API protégée et client web](docs/tp2-manuel-v11.md) est implémenté : `/v1`, rôles, erreurs uniformes, client HTML/JavaScript. Vérification locale : **112 passed, 1 xfailed**, couverture API **100 %**, **12 tests Node réussis**, Ruff et mypy conformes. Le compte rendu contient les commandes de lancement et les captures.

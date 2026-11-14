@@ -28,6 +28,25 @@ Les sections historiques de ce journal conservent l'ancienne numérotation. L'an
 
 Le jeu a été proposé par l'assistant à la demande de l'équipe, avec étiquettes fixées avant exécution ; la relecture et l'explication par les membres restent nécessaires. L'erreur « Colis abîmé, je suis déçu » est conservée avec la déclaration stricte de son échec attendu. Les sorties, limites et provenance figurent dans le [compte rendu TP1 du manuel V1.1](tp1-manuel-v11.md).
 
+### Contrôle sur clone neuf du TP1 — résultat communiqué par le membre A
+
+Le clone temporaire `verif-iadev-ec47fe1541694ea3b8de67ea844fb742`, situé dans le répertoire temporaire Windows, pointe sur le commit TP1 `257168e`. Après correction du PATH Git, le membre A a communiqué la sortie : **68 passed, 1 xfailed, 1 warning in 6.24s**. Cette sortie provient de son exécution ; elle n'a pas été présentée comme une nouvelle exécution de l'assistant. La capture de ce contrôle reste à joindre.
+
+### TP2 du manuel V1.1 — API protégée et client web
+
+Le nouveau kit officiel n'était pas disponible localement : les composants et tests ont été écrits d'après les pages 28 à 35 du manuel, avec provenance indiquée dans le compte rendu. Les sections TP2/TP3 historiques plus bas conservent l'ancienne numérotation.
+
+- [x] Routes `/v1/health`, `/v1/predict` et `/v1/modele`, clés et rôles.
+- [x] Erreurs uniformes 401, 403, 422, 500 et 503 ; ancienne route dépréciée et compatible.
+- [x] Client web : positif, négatif, abstention, espaces et clé refusés.
+- [x] Essai CORS réel : page sur 5600 refusée ; page sur 5500 fonctionnelle.
+- [x] **112 passed, 1 xfailed**, couverture API **100 %**.
+- [x] Ruff et mypy réussis ; **12 tests Node réussis**.
+- [x] Six captures intégrées au [compte rendu TP2 V1.1](tp2-manuel-v11.md).
+- [ ] CI de ce complément : à consigner après publication.
+
+Les clés locales restent dans `.env` ignoré par Git. Les autres membres doivent générer leurs propres clés après récupération du projet. L'activité Java complémentaire de la page 51 reste prévue au TP4 ; le TP3 Streamlit n'est pas encore réalisé.
+
 ## Comment remplir ce journal
 
 Ce fichier se place dans votre dépôt, sous `docs/journal-tp1-tp6.md`, et vos captures d'écran dans `docs/captures/`. Créez ce dossier une fois :
