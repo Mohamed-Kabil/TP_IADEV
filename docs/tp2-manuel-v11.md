@@ -80,7 +80,7 @@ Les tests couvrent les bornes et les blancs Unicode (y compris des exemples gén
 
 Les retouches aux tests fournis auparavant se limitent au tri des imports et au renommage de la variable `l` en `line` ; leurs assertions et seuils ne sont pas affaiblis. Ruff a aussi retiré un import inutilisé et trié deux imports du notebook. Le `xfailed` du jeu d'or reste l'erreur connue du TP1. L'avertissement AnyIO/Starlette est conservé dans la sortie réelle.
 
-Le workflow CI installe les dépendances nécessaires, entraîne le modèle, puis lance Ruff, mypy, pytest avec le seuil de couverture de 95 %, et les tests Node. Le résultat de publication sera renseigné après observation.
+Le workflow CI installe les dépendances nécessaires, entraîne le modèle, puis lance Ruff, mypy, pytest avec le seuil de couverture de 95 %, et les tests Node. La [CI du commit 972cedc](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43589222862) a été observée avec la conclusion `success` : Ruff, mypy, tests Python/couverture et tests Node ont tous réussi. Son [état vérifié](controles/tp2-v11-ci.json) est conservé dans le dépôt.
 
 ## Lancer depuis PowerShell
 

@@ -43,7 +43,7 @@ Le nouveau kit officiel n'était pas disponible localement : les composants et t
 - [x] **112 passed, 1 xfailed**, couverture API **100 %**.
 - [x] Ruff et mypy réussis ; **12 tests Node réussis**.
 - [x] Six captures intégrées au [compte rendu TP2 V1.1](tp2-manuel-v11.md).
-- [ ] CI de ce complément : à consigner après publication.
+- [x] [CI du TP2 réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43589222862) sur le commit `972cedc` : Ruff, mypy, tests Python/couverture et tests Node conformes. [Preuve enregistrée](controles/tp2-v11-ci.json).
 
 Les clés locales restent dans `.env` ignoré par Git. Les autres membres doivent générer leurs propres clés après récupération du projet. L'activité Java complémentaire de la page 51 reste prévue au TP4 ; le TP3 Streamlit n'est pas encore réalisé.
 
