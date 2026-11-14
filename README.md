@@ -56,3 +56,5 @@ Le suivi des contrôles et les résultats observés sont dans [le journal TP1 à
 Le complément du TP1 (modèle, API, jeu d’or et abstention) est décrit dans [le compte rendu V1.1](docs/tp1-manuel-v11.md). Bilan local : **68 passed, 1 xfailed**. Le journal historique conserve l’ancienne numérotation et contient la table de correspondance.
 
 Le [TP2 V1.1 — API protégée et client web](docs/tp2-manuel-v11.md) est implémenté : `/v1`, rôles, erreurs uniformes, client HTML/JavaScript. Vérification locale : **112 passed, 1 xfailed**, couverture API **100 %**, **12 tests Node réussis**, Ruff et mypy conformes. Le compte rendu contient les commandes de lancement et les captures.
+
+Le [TP3 V1.1 — interface Streamlit](docs/tp3-manuel-v11.md) ajoute les onglets avis et CSV, les deux graphiques et le téléchargement des résultats. Démarrer l'API, puis `python -m streamlit run ui/app.py`. La suite compte désormais **125 passed, 1 xfailed**, avec **100 %** de couverture API. Les parcours ont aussi été vérifiés dans le navigateur, y compris l'arrêt de l'API. Le compte rendu et le journal contiennent les preuves.

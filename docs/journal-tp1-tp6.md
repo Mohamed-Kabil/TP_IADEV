@@ -45,7 +45,19 @@ Le nouveau kit officiel n'était pas disponible localement : les composants et t
 - [x] Six captures intégrées au [compte rendu TP2 V1.1](tp2-manuel-v11.md).
 - [x] [CI du TP2 réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43589222862) sur le commit `972cedc` : Ruff, mypy, tests Python/couverture et tests Node conformes. [Preuve enregistrée](controles/tp2-v11-ci.json).
 
-Les clés locales restent dans `.env` ignoré par Git. Les autres membres doivent générer leurs propres clés après récupération du projet. L'activité Java complémentaire de la page 51 reste prévue au TP4 ; le TP3 Streamlit n'est pas encore réalisé.
+Les clés locales restent dans `.env` ignoré par Git. Les autres membres doivent générer leurs propres clés après récupération du projet. L'activité Java complémentaire de la page 51 reste prévue au TP4.
+
+### TP3 du manuel V1.1 — interface Streamlit exécutée le 14 novembre 2026
+
+- [x] Deux onglets : un avis ou un fichier CSV, via l'API `/v1` et la clé client locale.
+- [x] Positif, négatif, abstention, espaces refusés et API arrêtée contrôlés dans le navigateur.
+- [x] Six avis du CSV : trois positifs, deux négatifs, une abstention ; téléchargement réel conservé.
+- [x] Deux graphiques vérifiés dans le navigateur après correction d'un nom de série contenant une apostrophe.
+- [x] Bornes de confiance 0,60 et 1,00 explicites ; erreurs sans score exclues de la distribution.
+- [x] **13 tests du client et de la page réussis** ; suite complète **125 passed, 1 xfailed**, couverture API **100 %** ; Ruff et mypy conformes.
+- [ ] CI du TP3 : vérification après publication.
+
+Le [compte rendu TP3 V1.1](tp3-manuel-v11.md) contient les commandes, les captures, les résultats téléchargés, la provenance et les limites des tests. Le déploiement Community Cloud reste une procédure non exécutée. Le TP4 du nouveau manuel reste à réaliser ; les sections historiques ci-dessous conservent leur ancienne numérotation.
 
 ## Comment remplir ce journal
 

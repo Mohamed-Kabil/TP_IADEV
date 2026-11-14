@@ -1,0 +1,56 @@
+........................................................................ [ 57%]
+...........x..........................................                   [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:37
+  C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\.venv\Lib\site-packages\starlette\testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_interface.py::test_page_et_parcours_csv
+  C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app\.venv\Lib\site-packages\streamlit\elements\vega_charts.py:358: AltairDeprecationWarning:
+  Deprecated since `altair=5.5.0`. Use altair.theme instead.
+  Most cases require only the following change:
+
+      # Deprecated
+      alt.themes.enable('quartz')
+
+      # Updated
+      alt.theme.enable('quartz')
+
+  If your code registers a theme, make the following change:
+
+      # Deprecated
+      def custom_theme():
+          return {'height': 400, 'width': 700}
+      alt.themes.register('theme_name', custom_theme)
+      alt.themes.enable('theme_name')
+
+      # Updated
+      @alt.theme.register('theme_name', enable=True)
+      def custom_theme():
+          return alt.theme.ThemeConfig(
+              {'height': 400, 'width': 700}
+          )
+
+  See the updated User Guide for further details:
+      https://altair-viz.github.io/user_guide/api.html#theme
+      https://altair-viz.github.io/user_guide/customization.html#chart-themes
+    with alt.themes.enable("none") if alt.themes.active == "default" else nullcontext():  # type: ignore[attr-defined,unused-ignore]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+api\__init__.py       0      0   100%
+api\main.py          77      0   100%
+api\model.py         27      0   100%
+api\schemas.py       33      0   100%
+api\securite.py      41      0   100%
+api\v1.py            39      0   100%
+-----------------------------------------------
+TOTAL               217      0   100%
+Required test coverage of 95% reached. Total coverage: 100.00%
+=========================== short test summary info ===========================
+XFAIL tests/test_jeu_or.py::test_pas_d_erreur_franche[ligne-21] - Erreur signal�e dans le manuel V1.1, p. 18 : verdict positif malgr� le sens n�gatif ; limite du vocabulaire TF-IDF.
+125 passed, 1 xfailed, 2 warnings in 20.64s
