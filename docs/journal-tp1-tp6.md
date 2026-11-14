@@ -24,7 +24,7 @@ Les sections historiques de ce journal conservent l'ancienne numérotation. L'an
 - [x] Bilan du jeu d'or : 16 justes, 3 abstentions, 1 erreur connue déclarée.
 - [x] Modèle et jeu d'or : `24 passed, 1 xfailed`.
 - [x] Suite locale complète : `68 passed, 1 xfailed`.
-- [ ] CI du complément : résultat à consigner après publication.
+- [x] [CI du complément réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43584727302) : modèle réentraîné et tests exécutés sur le commit `e125195`. Preuve : [état CI](controles/tp1-v11-ci.json).
 
 Le jeu a été proposé par l'assistant à la demande de l'équipe, avec étiquettes fixées avant exécution ; la relecture et l'explication par les membres restent nécessaires. L'erreur « Colis abîmé, je suis déçu » est conservée avec la déclaration stricte de son échec attendu. Les sorties, limites et provenance figurent dans le [compte rendu TP1 du manuel V1.1](tp1-manuel-v11.md).
 

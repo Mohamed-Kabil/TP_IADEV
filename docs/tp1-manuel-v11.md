@@ -42,7 +42,7 @@ Les tests paramétrés contrôlent chaque avis via `POST /predict`. L'erreur con
 
 Preuves : [tests modèle et jeu d'or](controles/tp1-v11-modele-tests.txt), [suite complète](controles/tp1-v11-pytest.txt). Le seul avertissement observé est la dépréciation AnyIO issue de Starlette/TestClient.
 
-La CI entraîne son propre modèle avant de lancer les tests. Les familles de versions utilisées pour pandas, scikit-learn, Joblib, pytest et NumPy sont alignées sur l'environnement du projet. Son nouveau résultat sera ajouté après publication et observation.
+La CI entraîne son propre modèle avant de lancer les tests. Les familles de versions utilisées pour pandas, scikit-learn, Joblib, pytest et NumPy sont alignées sur l'environnement du projet. La [CI du commit e125195](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43584727302) a terminé avec `success`, y compris les étapes d’entraînement et de tests. Son [état observé](controles/tp1-v11-ci.json) est conservé dans le dépôt.
 
 ## Artefacts et commandes
 
