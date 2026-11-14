@@ -58,7 +58,7 @@ L'échec attendu du jeu d'or reste la limite TF-IDF déjà déclarée au TP1. Le
 
 Le premier passage CI a révélé une incompatibilité de la version récente de PyArrow avec NumPy 1.26.4. PyArrow est désormais fixé à **17.0.0**, version utilisée lors des essais locaux, dans les dépendances et dans la CI.
 
-La CI installe désormais Streamlit et rejoue les tests Python, Ruff, mypy et les tests du client web. État de la CI : vérification après publication.
+La CI installe désormais Streamlit et rejoue les tests Python, Ruff, mypy et les tests du client web. [CI réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43591214356) sur le commit `895076d` : Ruff, mypy, tests Python/couverture et tests Node passent. [État enregistré](controles/tp3-v11-ci.json).
 
 ## Démonstration distante
 

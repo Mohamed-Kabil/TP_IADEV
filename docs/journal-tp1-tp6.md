@@ -55,7 +55,7 @@ Les clés locales restent dans `.env` ignoré par Git. Les autres membres doiven
 - [x] Deux graphiques vérifiés dans le navigateur après correction d'un nom de série contenant une apostrophe.
 - [x] Bornes de confiance 0,60 et 1,00 explicites ; erreurs sans score exclues de la distribution.
 - [x] **13 tests du client et de la page réussis** ; suite complète **125 passed, 1 xfailed**, couverture API **100 %** ; Ruff et mypy conformes.
-- [ ] CI du TP3 : vérification après publication.
+- [x] [CI du TP3 réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43591214356) sur le commit `895076d`, après fixation de PyArrow 17.0.0 compatible NumPy 1.26.4. [Preuve enregistrée](controles/tp3-v11-ci.json).
 
 Le [compte rendu TP3 V1.1](tp3-manuel-v11.md) contient les commandes, les captures, les résultats téléchargés, la provenance et les limites des tests. Le déploiement Community Cloud reste une procédure non exécutée. Le TP4 du nouveau manuel reste à réaliser ; les sections historiques ci-dessous conservent leur ancienne numérotation.
 
