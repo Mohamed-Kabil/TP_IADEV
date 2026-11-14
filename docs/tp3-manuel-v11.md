@@ -56,6 +56,8 @@ Les deux nouveaux fichiers contiennent **13 tests**. La suite complète après c
 
 L'échec attendu du jeu d'or reste la limite TF-IDF déjà déclarée au TP1. Les deux avertissements proviennent de Starlette/AnyIO et de Streamlit/Altair. Le test d'upload AppTest fournit un flux en mémoire car AppTest 1.39 ne pilote pas `file_uploader` ; le chargement réel et le téléchargement ont donc aussi été exécutés dans le navigateur.
 
+Le premier passage CI a révélé une incompatibilité de la version récente de PyArrow avec NumPy 1.26.4. PyArrow est désormais fixé à **17.0.0**, version utilisée lors des essais locaux, dans les dépendances et dans la CI.
+
 La CI installe désormais Streamlit et rejoue les tests Python, Ruff, mypy et les tests du client web. État de la CI : vérification après publication.
 
 ## Démonstration distante
