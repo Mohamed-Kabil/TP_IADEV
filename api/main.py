@@ -63,7 +63,7 @@ async def health_check():
 
 @app.post("/predict", response_model=PredictResponse, summary="Classifier un texte")
 async def predict(request: PredictRequest):
-    """Renvoie le sentiment (POSITIVE ou NEGATIVE) et la confiance.
+    """Renvoie le sentiment (POSITIVE, NEGATIVE ou INDETERMINE) et la confiance.
 
     - 422 : texte vide ou trop long (Pydantic), ou refusé par le modèle
     - 503 : modèle non chargé

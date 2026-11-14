@@ -1,0 +1,22 @@
+juste                    POSITIVE     0.72  attendu POSITIVE  La livraison est rapide et le produit est conforme à la
+juste                    POSITIVE     0.74  attendu POSITIVE  L'emballage est soigné et les finitions sont propres.
+juste                    POSITIVE     0.75  attendu POSITIVE  Le service est impeccable, je recommande cette boutique
+juste                    POSITIVE     0.83  attendu POSITIVE  Excellent rapport qualité prix, je suis très satisfait 
+juste                    POSITIVE     0.81  attendu POSITIVE  Le vendeur a répondu en moins d'une heure et a réglé mo
+juste                    POSITIVE     0.61  attendu POSITIVE  Le produit est solide et fonctionne parfaitement depuis
+juste                    POSITIVE     0.76  attendu POSITIVE  Pas déçu par cet achat, je recommande sans hésiter.
+juste                    POSITIVE     0.71  attendu POSITIVE  La livraison a été lente, mais finalement le produit es
+abstention               INDETERMINE  0.56  attendu POSITIVE  Malgré une boîte abîmée, le produit fonctionne parfaite
+juste                    POSITIVE     0.82  attendu POSITIVE  Je ne regrette pas cet achat : service impeccable et li
+juste                    NEGATIVE     0.65  attendu NEGATIVE  Le produit est arrivé cassé et le service client reste 
+juste                    NEGATIVE     0.74  attendu NEGATIVE  La commande n'a jamais été reçue et le remboursement es
+juste                    NEGATIVE     0.67  attendu NEGATIVE  La taille est trop petite et le retour est payant.
+juste                    NEGATIVE     0.66  attendu NEGATIVE  La notice est incompréhensible et plusieurs pièces sont
+juste                    NEGATIVE     0.84  attendu NEGATIVE  Il se casse au bout de deux utilisations : c'est une ma
+juste                    NEGATIVE     0.83  attendu NEGATIVE  La facture est erronée et aucun geste commercial n'a ét
+juste                    NEGATIVE     0.73  attendu NEGATIVE  Je ne recommande pas : produit cassé et pièces manquant
+abstention               INDETERMINE  0.52  attendu NEGATIVE  Le service semblait impeccable, mais finalement la noti
+abstention               INDETERMINE  0.58  attendu NEGATIVE  La livraison est rapide, mais le produit est cassé et l
+erreur franche déclarée  POSITIVE     0.67  attendu NEGATIVE  Colis abîmé, je suis déçu
+
+Bilan sur 20 avis : abstention 3, erreur franche déclarée 1, juste 16

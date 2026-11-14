@@ -16,6 +16,7 @@ models/*
 data/*
 !data/.gitkeep
 !data/sample_reviews.csv
+!data/jeu_or.csv
 mlruns/
 mlflow.db
 

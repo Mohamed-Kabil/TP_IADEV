@@ -50,3 +50,7 @@ sentiment-app/
 
 Dépôt de travail : [Mohamed-Kabil/TP_IADEV](https://github.com/Mohamed-Kabil/TP_IADEV).
 Le suivi des contrôles et les résultats observés sont dans [le journal TP1 à TP6](docs/journal-tp1-tp6.md). Les captures seront placées dans `docs/captures/`.
+
+## Avancement — manuel V1.1
+
+Le complément du TP1 (modèle, API, jeu d’or et abstention) est décrit dans [le compte rendu V1.1](docs/tp1-manuel-v11.md). Bilan local : **68 passed, 1 xfailed**. Le journal historique conserve l’ancienne numérotation et contient la table de correspondance.

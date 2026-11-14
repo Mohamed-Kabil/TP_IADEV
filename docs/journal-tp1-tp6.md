@@ -13,6 +13,21 @@
 
 **Mise à jour du 7 novembre 2026** : migration du travail existant vers TP_IADEV, avec conservation de l’historique. Le dossier local reste `C:\Users\moham\Desktop\sentiment-app (1)\sentiment-app` ; les chemins `C:\IA-DEV` des exemples ci-dessous sont à adapter. Les résultats renseignés proviennent des commandes réellement exécutées ; le TP2 est désormais exécuté et ses résultats sont renseignés ci-dessous ; le TP3 est désormais exécuté localement ; les TP4 à TP6, les contrôles sur les autres postes et le clone frais restent à réaliser. Les captures non présentes sont à ajouter : aucune image ni mesure n’a été reconstituée.
 
+## Mise en correspondance avec le manuel V1.1
+
+Les sections historiques de ce journal conservent l'ancienne numérotation. L'ancien TP1 correspond à l'Atelier 0 ; les anciens TP2 et TP3 forment le coeur du nouveau TP1.
+
+### TP1 du manuel V1.1 — complément exécuté le 14 novembre 2026
+
+- [x] Jeu d'or versionné : 20 avis, 10 positifs et 10 négatifs, dont 8 difficiles ; textes et étiquettes définis avant prédiction.
+- [x] Abstention de l'API sous 0,60 ; seuil du manuel mesuré sur le jeu de démonstration.
+- [x] Bilan du jeu d'or : 16 justes, 3 abstentions, 1 erreur connue déclarée.
+- [x] Modèle et jeu d'or : `24 passed, 1 xfailed`.
+- [x] Suite locale complète : `68 passed, 1 xfailed`.
+- [ ] CI du complément : résultat à consigner après publication.
+
+Le jeu a été proposé par l'assistant à la demande de l'équipe, avec étiquettes fixées avant exécution ; la relecture et l'explication par les membres restent nécessaires. L'erreur « Colis abîmé, je suis déçu » est conservée avec la déclaration stricte de son échec attendu. Les sorties, limites et provenance figurent dans le [compte rendu TP1 du manuel V1.1](tp1-manuel-v11.md).
+
 ## Comment remplir ce journal
 
 Ce fichier se place dans votre dépôt, sous `docs/journal-tp1-tp6.md`, et vos captures d'écran dans `docs/captures/`. Créez ce dossier une fois :
