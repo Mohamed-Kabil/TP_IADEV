@@ -59,6 +59,17 @@ Les clés locales restent dans `.env` ignoré par Git. Les autres membres doiven
 
 Le [compte rendu TP3 V1.1](tp3-manuel-v11.md) contient les commandes, les captures, les résultats téléchargés, la provenance et les limites des tests. Le déploiement Community Cloud reste une procédure non exécutée. Le TP4 du nouveau manuel reste à réaliser ; les sections historiques ci-dessous conservent leur ancienne numérotation.
 
+### TP4 du manuel V1.1 — paquet Python, 14 novembre 2026
+
+- [x] API Python `sentiment_app.predict`, version et commande `sentiment`.
+- [x] Modèle réentraîné : F1 macro 0,879 ; métriques enregistrées avant le tag.
+- [x] Métadonnées, dépendances compatibles et ressources embarquées dans les distributions.
+- [x] Suite du dépôt : **125 passed, 1 skipped, 1 xfailed**, couverture API **100 %** ; Ruff et mypy réussis.
+- [x] Six tests du paquet installé et vérificateur local écrits suivant le manuel ; nouveau kit officiel non fourni.
+- [ ] Rapport final CONFORME, tag, release et CI : validation après construction finale.
+
+Voir le [compte rendu TP4](tp4-manuel-v11.md). Le complément Java reste une activité séparée ; la livraison présente porte sur le paquet Python.
+
 ## Comment remplir ce journal
 
 Ce fichier se place dans votre dépôt, sous `docs/journal-tp1-tp6.md`, et vos captures d'écran dans `docs/captures/`. Créez ce dossier une fois :

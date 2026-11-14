@@ -1,7 +1,7 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  tp3:
+  tp4:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,3 +21,17 @@ jobs:
         run: . .venv/bin/activate && python -m pytest -q --cov=api --cov-report=term-missing --cov-fail-under=95
       - name: Client web
         run: node --test web/client.test.mjs
+      - name: Construire les distributions TP4
+        run: |
+          . .venv/bin/activate
+          pip install build
+          mkdir -p src/sentiment_app/modele
+          cp models/sentiment.joblib src/sentiment_app/modele/
+          python -m build
+      - name: Tester la roue hors des sources
+        run: |
+          python -m venv "$RUNNER_TEMP/paquet"
+          "$RUNNER_TEMP/paquet/bin/python" -m pip install dist/*.whl "pytest>=8,<9"
+          cp tests/test_paquet.py "$RUNNER_TEMP/test_paquet.py"
+          cd "$RUNNER_TEMP"
+          VERIFICATION_LIVRABLE=1 "$RUNNER_TEMP/paquet/bin/python" -I -m pytest test_paquet.py -q --import-mode=importlib

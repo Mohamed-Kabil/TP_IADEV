@@ -34,3 +34,5 @@ Thumbs.db
 .hypothesis/
 .coverage
 htmlcov/
+src/sentiment_app/modele/*.joblib
+docs/livrable-tp4.txt
