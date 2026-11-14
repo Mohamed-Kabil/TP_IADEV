@@ -66,7 +66,9 @@ Le [compte rendu TP3 V1.1](tp3-manuel-v11.md) contient les commandes, les captur
 - [x] Métadonnées, dépendances compatibles et ressources embarquées dans les distributions.
 - [x] Suite du dépôt : **125 passed, 1 skipped, 1 xfailed**, couverture API **100 %** ; Ruff et mypy réussis.
 - [x] Six tests du paquet installé et vérificateur local écrits suivant le manuel ; nouveau kit officiel non fourni.
-- [ ] Rapport final CONFORME, tag, release et CI : validation après construction finale.
+- [x] Rapport final **CONFORME** sur le commit `1c31f43`, tag **v1.0.0** ; six tests réussis dans un venv Windows neuf, aucun ignoré.
+- [x] [Release 1.0.0 publiée](https://github.com/Mohamed-Kabil/TP_IADEV/releases/tag/v1.0.0) avec roue, archive source et rapport ; [preuves et SHA256](controles/tp4-v11-release.json).
+- [x] [CI du tag réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43591826188), y compris construction et six tests de la roue installée hors des sources sous Linux ; [preuve enregistrée](controles/tp4-v11-ci.json).
 
 Voir le [compte rendu TP4](tp4-manuel-v11.md). Le complément Java reste une activité séparée ; la livraison présente porte sur le paquet Python.
 

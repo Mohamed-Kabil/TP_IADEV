@@ -1,0 +1,30 @@
+{
+  "id": 445261159,
+  "tag": "v1.0.0",
+  "draft": false,
+  "url": "https://github.com/Mohamed-Kabil/TP_IADEV/releases/tag/v1.0.0",
+  "published_at": "2026-11-14T11:54:18Z",
+  "assets": [
+    {
+      "name": "livrable-tp4.txt",
+      "size": 1426,
+      "sha256": "aab76ff16d687029315b7059c97f0266ab79a821effe97ff5588cf922dfce62e",
+      "url": "https://github.com/Mohamed-Kabil/TP_IADEV/releases/download/v1.0.0/livrable-tp4.txt",
+      "download_verified": true
+    },
+    {
+      "name": "sentiment_app-1.0.0-py3-none-any.whl",
+      "size": 9940,
+      "sha256": "325ee56b1a1c1534a48d0952b29e4914751995b3e8f7624e78c052270c0cdf4a",
+      "url": "https://github.com/Mohamed-Kabil/TP_IADEV/releases/download/v1.0.0/sentiment_app-1.0.0-py3-none-any.whl",
+      "download_verified": true
+    },
+    {
+      "name": "sentiment_app-1.0.0.tar.gz",
+      "size": 23678,
+      "sha256": "936e617330ef58054df79aee02b6af078ec6a6a2e4946ab2ec0f3dd584bd36f9",
+      "url": "https://github.com/Mohamed-Kabil/TP_IADEV/releases/download/v1.0.0/sentiment_app-1.0.0.tar.gz",
+      "download_verified": true
+    }
+  ]
+}

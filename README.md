@@ -60,3 +60,5 @@ Le [TP2 V1.1 — API protégée et client web](docs/tp2-manuel-v11.md) est impl�
 Le [TP3 V1.1 — interface Streamlit](docs/tp3-manuel-v11.md) ajoute les onglets avis et CSV, les deux graphiques et le téléchargement des résultats. Démarrer l'API, puis `python -m streamlit run ui/app.py`. La suite compte désormais **125 passed, 1 xfailed**, avec **100 %** de couverture API. Les parcours ont aussi été vérifiés dans le navigateur, y compris l'arrêt de l'API. Le compte rendu et le journal contiennent les preuves.
 
 Le [TP4 V1.1 — paquet installable](docs/tp4-manuel-v11.md) fournit `sentiment_app.predict`, la commande `sentiment`, un modèle embarqué et un vérificateur qui installe la roue hors du dépôt dans un environnement neuf. Voir [l'installation du paquet](README-PAQUET.md) et [le journal des versions](CHANGELOG.md).
+
+La [release v1.0.0](https://github.com/Mohamed-Kabil/TP_IADEV/releases/tag/v1.0.0) contient les deux distributions et le rapport **CONFORME**. Les six tests du paquet installé passent sous Windows et en CI Linux.

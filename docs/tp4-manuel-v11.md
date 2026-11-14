@@ -39,7 +39,15 @@ python scripts/verifier_livrable.py
 
 Utiliser un dossier `dist/` vide pour une nouvelle construction ; le vérificateur refuse les fichiers supplémentaires. Le tag `v1.0.0` reste attaché au commit de version : ne pas le déplacer pour une modification ultérieure.
 
-La CI construit également la roue puis l'installe dans un environnement neuf, hors des sources, et exécute les six tests. La validation finale du rapport, la release et leur CI seront enregistrées après les contrôles.
+La CI construit également la roue puis l'installe dans un environnement neuf, hors des sources, et exécute les six tests. La [CI du tag v1.0.0 est réussie](https://github.com/Mohamed-Kabil/TP_IADEV/actions/runs/43591826188), comme celle de la branche main sur le même commit. [État enregistré](controles/tp4-v11-ci.json).
+
+## Livraison vérifiée
+
+Le tag **v1.0.0** désigne le commit `1c31f43aa0b05a39992f8be271d854df3ffbd89a`. Le rapport local se termine par **Bilan : CONFORME** : dépôt propre, tag égal à HEAD, modèle identique dans les deux distributions, installation dans un venv Windows neuf, **6 passed in 27.55s**, aucun test ignoré. La commande installée hors des sources retourne `{"label": "negative", "score": 0.7465}`. Les versions réellement installées figurent dans le rapport.
+
+La [release sentiment-app 1.0.0](https://github.com/Mohamed-Kabil/TP_IADEV/releases/tag/v1.0.0) contient la roue, l'archive source et [livrable-tp4.txt](https://github.com/Mohamed-Kabil/TP_IADEV/releases/download/v1.0.0/livrable-tp4.txt). Les métadonnées et empreintes des trois fichiers sont conservées dans la [preuve de publication](controles/tp4-v11-release.json). Le rapport reste une pièce jointe, sans être commité.
+
+Les mises à jour de documentation suivantes ne déplacent pas le tag. Pour reproduire strictement le rapport, utiliser les sources du tag `v1.0.0`, préparer le modèle et construire les distributions ; le contrôle tag/HEAD refusera volontairement un commit de documentation ultérieur.
 
 ## Limites
 
